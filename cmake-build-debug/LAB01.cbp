@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="LAB01"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="LAB01">
+				<Option output="/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/LAB01" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lucasalves/Documents/Estudos/LAB01/."/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 LAB01"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="LAB01/fast">
+				<Option output="/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/LAB01" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/lucasalves/Documents/Estudos/LAB01/."/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 LAB01/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/INSTALL_GUROBI">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/Makefile">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/Makefile-with-Lemon-installed-in-up-level-folder">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/README">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/a.pdf">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/activate.sh">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/deprecated.h">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/digr_bipartite_100_10">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/digr_bipartite_10_20">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/digr_bipartite_30_30">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/digr_bipartite_50_30">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/digr_cflp_1">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/digr_cflp_2">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/digr_triang_sparse_100">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/digr_triang_sparse_200">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/ex_basics_graph.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/ex_bipartite_matching.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/ex_bipartite_matching2.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/ex_cflp.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/ex_fractional_packing.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/ex_knapsack.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/ex_kpaths.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/ex_perfect_matching_general_graphs.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/ex_steiner-directed_gurobi.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/ex_tsp_gurobi.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/ex_two_matching.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/ex_vertex_cover_in_bipartite_graph.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/ex_viewgraph.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/generate_random_euclidean_bipartite_graph.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/generate_random_euclidean_graph.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/generate_steiner_file.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/generate_triangulated_digraph.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/generate_triangulated_graph.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/geompack.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/geompack.hpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_100">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_15">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_20">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_30">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_40">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_7">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_70">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_a280">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_att48">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_att48.steiner">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_att532">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_berlin52">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_berlin52.pdf">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_berlin52.steiner">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_caminho">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_d198">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_d493">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_eucli_100">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_eucli_200">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_eucli_300">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_k21">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_novo_tipo_grafo">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_small_7">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_sparse_50">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_sparse_60">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gr_ulysses22">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gurobi.log">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/gurobi.pdf">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/inputs/gr_15v">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/inputs/gr_20v">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/inputs/gr_7v">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/lab01.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/mygraphlib.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/mygraphlib.h">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/mylgraphlib.h">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/myutils.cpp">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/myutils.h">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/test_ex">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/thirdpartprograms.h">
+			<Option target="LAB01"/>
+		</Unit>
+		<Unit filename="/home/lucasalves/Documents/Estudos/LAB01/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

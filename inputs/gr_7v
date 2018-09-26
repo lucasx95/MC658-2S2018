@@ -1,0 +1,20 @@
+7 12 150
+A 35 48
+B 12 49
+C 28 16
+D 49 78
+E 25 20
+F 52 44
+G 36 55
+A B
+A C
+B C
+B D
+B E
+C D
+C F
+D E
+D F
+E F
+E G
+F G

@@ -1,0 +1,3 @@
+/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/lucasalves/Documents/Estudos/LAB01/cmake-build-debug/CMakeFiles/LAB01.dir

@@ -1,0 +1,36 @@
+#
+# The first lines starting by #  are comments.
+# 
+# The file format, without line comments, is the following:
+# * The first line has the following info:
+#
+# <n> <m> <Nvalue?> <Ncap?> <Npos?> <Evalue?> <Ecap?> <N+values> <N+strings> <E+values> <E+strings>
+#
+# where:
+# <n>        is the number of nodes in the graph
+# <m>        can be -1 or the number of edges.
+#            If it is -1, the graph is the euclidean graph and will not have
+#            edge capacities or other aditional columns of type <E+.....> the edge
+#            weights/values are the euclidean distance between point coordinates
+# <Nvalue?>  can be 0 or 1. It indicates if there is a value/weight for a node.
+# <Ncap?>    can be 0 or 1. It indicates if there is a value/weight for a node.
+#   
+<vname1>  <vweight1>  <vcap1>  <posx1>  <posx2>  <
+B
+C
+D
+E
+F
+G
+A B 7.0
+A C 5.0
+B C 3.0
+B D 2.0
+B E 8.0
+C D 2.0
+C F 9.0
+D E 4.0
+D F 3.0
+E F 8.0
+E G 2.0
+F G 6.0

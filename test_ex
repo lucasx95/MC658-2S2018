@@ -1,0 +1,27 @@
+#!/bin/bash
+function testprogram () { 
+    local array="$1[@]"
+    local seeking=$2
+    $1 $2
+    echo;echo;
+    echo "------------------------------------------------------------"
+    echo "Test of program  :  $1"
+    echo "Problem name     :  $3"
+    echo "Command executed :"
+    echo "                  $1   $2"
+    echo
+    read -p 'Press ENTER key...'
+    echo
+}
+
+
+testprogram "ex_fractional_packing.e"        ""                                 "Minimum Fractional Packing"
+testprogram "ex_knapsack.e"                  ""                                 "Maximum Knapsack Problem"
+testprogram "ex_bipartite_matching.e"        "digr_bipartite_100_10"            "Maximum weighted bipartite matching (only linear programming)"
+testprogram "ex_cflp.e"                      "digr_cflp_1"                      "Minimum Capacitated Facility Location Problem"
+testprogram "ex_kpaths.e"                    "digr_triang_sparse_100 12 50 5"   "Minimium weighted k-Paths from a node s to a node t"
+testprogram "ex_perfect_matching_general_graphs.e" "gr_att48"                   "Maximum weighted matching (non-necessarily bipartite)"
+testprogram "ex_steiner-directed_gurobi.e"   "gr_att48.steiner"                 "Minimum weighted Steiner Tree Problem"
+testprogram "ex_tsp_gurobi.e"                "gr_berlin52"                      "Minimum Traveling Salesman Problem"
+testprogram "ex_two_matching.e"              "gr_berlin52"                      "Minimum weighted two-matching"
+
