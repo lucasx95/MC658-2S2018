@@ -161,14 +161,14 @@ public:
         int estimative = 0;
         ListNode *current = head;
         while (remaining_weight > 0 && current != nullptr) {
-            // if the item does not fit completely estimate it partiallyy
-            if (current->weight > remaining_weight) {
-                float partial_value = (float) remaining_weight / (float) current->weight;
-                estimative += (int) ceil((float) current->value * partial_value);
-                remaining_weight = 0;
-                current = current->next;
-                continue;
-            }
+            // if the item does not fit completely estimate it partially
+//            if (current->weight > remaining_weight) {
+//                float partial_value = (float) remaining_weight / (float) current->weight;
+//                estimative += (int) ceil((float) current->value * partial_value);
+//                remaining_weight = 0;
+//                current = current->next;
+//                continue;
+//            }
             estimative += current->value;
             remaining_weight -= current->weight;
             current = current->next;
@@ -217,6 +217,16 @@ public:
         }
         cout << endl;
     }
+
+    void print(NodeStringMap &vname) {
+        ListNode *current = head;
+        while (current != nullptr) {
+            cout << vname[current->data] << "  ";
+            current = current->next;
+        }
+        cout << endl;
+    }
+
 };
 
 bool ReadListGraph3(string filename,
@@ -304,7 +314,8 @@ bool ReadListGraph3(string filename,
     return (true);
 }
 
-set<Node> max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &value, int Capacity);
+set<Node>
+max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &value, int Capacity, NodeStringMap &vname);
 
 
 bool isSetIndependent(ListGraph &g, const set<Node> &indSet) {
@@ -376,7 +387,7 @@ int main(int argc, char *argv[]) {
     cout << "Graph file: " << filename << "\n\n";
 
     clock_t start = clock();
-    auto independentSet = max_ind_set(g, weight, value, C);
+    auto independentSet = max_ind_set(g, weight, value, C, vname);
     cout << "time: " << (clock() - start) / (double) CLOCKS_PER_SEC << '\n';
 
     cout << "Independent set has vertices:" << endl;
@@ -413,7 +424,8 @@ int main(int argc, char *argv[]) {
 
 // Modificar essa subrotina que retorna o conjunto independente de valor máximo
 // O código a seguir é apenas um exemplo de uma solução trivial
-set<Node> max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &value, int Capacity) {
+set<Node>
+max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &value, int Capacity, NodeStringMap &vname) {
     int max_solution = 0, remaining_weight = Capacity, current_solution = 0;
     OrderedLinkedNodeList available, solution, used;
     set<Node> independentSet;
@@ -440,26 +452,49 @@ set<Node> max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIn
 
     ListNode *clean_backtrack = nullptr;
     while (!available.empty()) {
-        ListNode *candidate = available.peak(), *discarted = nullptr;
+        ListNode *candidate = available.peak();
+        cout << endl << "PRE ITERECTION" << endl;
+        cout << "AVAILABLE: ";
+        available.print(vname);
+        cout << "USED: ";
+        used.print(vname);
+        cout << "SOLUTION: ";
+        solution.print(vname);
+        cout << "CLEAN BACK: ";
+        cout << (clean_backtrack == nullptr ? "-1" : vname[clean_backtrack->data])<< endl;
+
 
         while (candidate != nullptr &&
                current_solution + available.estimate(remaining_weight) > max_solution) {
             ListNode *next = candidate->next;
             if (solution.canInsertInSolution(candidate, g, edges, remaining_weight)) {
-                discarted = candidate->next;
                 solution.insert(available.remove(candidate));
                 remaining_weight -= candidate->weight;
                 current_solution += candidate->value;
             }
             candidate = next;
         }
-        if (current_solution > max_solution) {
+
+        cout << "POST ITERECTION" << endl;
+        cout << "AVAILABLE: ";
+        available.print(vname);
+        cout << "USED: ";
+        used.print(vname);
+        cout << "SOLUTION: ";
+        solution.print(vname);
+        cout << "CLEAN BACK: ";
+        cout << (clean_backtrack == nullptr ? "-1" : vname[clean_backtrack->data]) << endl;
+
+
+        if (current_solution >= max_solution) {
             max_solution = current_solution;
             independentSet = solution.toSet();
+            cout << "NEW BEST SOLUTION: ";
+            solution.print(vname);
+            cout << "VALUE: " << current_solution << endl;
         }
 
         if (clean_backtrack == solution.peakBottom()) {
-
             if (solution.empty()) {
                 return independentSet;
             }
@@ -475,12 +510,6 @@ set<Node> max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIn
         }
 
         ListNode *backtracked = solution.bottom();
-        while (discarted != nullptr && discarted != available.peak()) {
-            if (used.empty()) {
-                clean_backtrack = solution.peakBottom();
-            }
-            used.insertOrdered(available.top());
-        }
         current_solution -= backtracked->value;
         remaining_weight += backtracked->weight;
         if (!solution.empty()) {

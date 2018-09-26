@@ -11,7 +11,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8900ac27-5583-4de4-a84a-123ffcc3c089" name="Default Changelist" comment="" />
+    <list default="true" id="8900ac27-5583-4de4-a84a-123ffcc3c089" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inputs/gr_100v" beforeDir="false" afterPath="$PROJECT_DIR$/inputs/gr_100v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab01.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lab01.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab01.e" beforeDir="false" afterPath="$PROJECT_DIR$/lab01.e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab01.o" beforeDir="false" afterPath="$PROJECT_DIR$/lab01.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saida" beforeDir="false" afterPath="$PROJECT_DIR$/saida" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +42,11 @@
           <entry key="Makefile" value="2" />
           <entry key="README" value="1" />
           <entry key="cpp" value="2" />
+          <entry key="gr_100" value="1" />
+          <entry key="gr_100v" value="1" />
+          <entry key="gr_20v" value="1" />
+          <entry key="gr_70" value="1" />
+          <entry key="gr_7v" value="1" />
           <entry key="h" value="4" />
           <entry key="saida" value="1" />
         </counts>
@@ -43,22 +55,25 @@
         <counts>
           <entry key="Makefile" value="2" />
           <entry key="ObjectiveC" value="6" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="PLAIN_TEXT" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Makefile" value="30" />
           <entry key="README" value="3" />
-          <entry key="cpp" value="7477" />
-          <entry key="saida" value="4" />
+          <entry key="cpp" value="8384" />
+          <entry key="gr_100" value="4" />
+          <entry key="gr_100v" value="16" />
+          <entry key="gr_70" value="13" />
+          <entry key="saida" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Makefile" value="30" />
-          <entry key="ObjectiveC" value="7477" />
-          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="ObjectiveC" value="8384" />
+          <entry key="PLAIN_TEXT" value="42" />
         </counts>
       </usages-collector>
     </session>
@@ -69,37 +84,7 @@
         <entry file="file://$PROJECT_DIR$/README">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret line="222" column="9" lean-forward="true" selection-start-line="222" selection-start-column="9" selection-end-line="222" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mygraphlib.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/include/lemon/bits/graph_extender.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="329" column="25" selection-start-line="329" selection-start-column="21" selection-end-line="329" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/include/lemon/list_graph.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="997" column="15" selection-start-line="997" selection-start-column="15" selection-end-line="997" selection-end-column="15" />
-              <folding>
-                <element signature="e#755#778#0" expanded="true" />
-              </folding>
+              <caret line="222" column="9" selection-start-line="222" selection-start-column="9" selection-end-line="222" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -114,40 +99,67 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/INSTALL_GUROBI">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="65" selection-start-line="37" selection-end-line="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lab01.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="382" column="32" lean-forward="true" selection-start-line="382" selection-start-column="32" selection-end-line="382" selection-end-column="32" />
+            <state relative-caret-position="15">
+              <caret line="463" column="89" selection-start-line="463" selection-start-column="89" selection-end-line="463" selection-end-column="89" />
               <folding>
-                <element signature="e#1469#1518#0" expanded="true" />
+                <element signature="e#6286#6335#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/saida">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="420">
-              <caret line="58" selection-start-line="58" selection-end-line="58" selection-end-column="36" />
+        <entry file="file://$PROJECT_DIR$/gr_70">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/c++/6/bits/stl_set.h">
+        <entry file="file://$PROJECT_DIR$/gr_100">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="664" column="6" selection-start-line="664" selection-start-column="6" selection-end-line="664" selection-end-column="6" />
+            <state>
+              <caret column="7" selection-start-column="7" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inputs/gr_100v">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inputs/gr_20v">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inputs/gr_7v">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/saida">
+          <provider selected="true" editor-type-id="LargeFileEditor">
+            <state relative-caret-position="-1796">
+              <caret line="24962" column="26" lean-forward="true" selection-start-line="24962" selection-start-column="26" selection-end-line="24962" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -167,26 +179,53 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>open</find>
-      <find>pdf</find>
-      <find>lemon/gomory_hu.h</find>
-      <find>gurobni</find>
-      <find>not</find>
-      <find>lgurobi</find>
-      <find>CPPSTDLIB</find>
-      <find>Edge)</find>
-      <find>addE</find>
       <find>estimate</find>
       <find>print</find>
       <find>cout</find>
+      <find>^(\d+) (\d+) \d+\.\d+</find>
+      <find>(\d+)\.(\d+)</find>
       <find>max_ind_set</find>
+      <find>solution.inser</find>
+      <find>91 88 85 81 73 72 70 66 63 62 58 41 33 21 19 6 1</find>
+      <find>NEW BES</find>
+      <find>USED: .*66</find>
+      <find>NEW BEST SOLUTION:</find>
+      <find>independentSet</find>
+      <find>vname</find>
+      <find>NEW BEST SOLUTION</find>
+      <find>auto v: independentSet</find>
+      <find>NEW BEST SOLUTION: .*66</find>
+      <find>^SOLUTION: .*66</find>
+      <find>SOLUTION: .*66</find>
+      <find>SOLUTION: .*66.*</find>
+      <find>print()</find>
+      <find>ord</find>
+      <find>NEW BEST</find>
+      <find>NEW BEST.*62</find>
+      <find>61</find>
+      <find>33</find>
+      <find>NEW_</find>
+      <find>insertOr</find>
+      <find>NEW</find>
+      <find>insert(</find>
+      <find>new bes</find>
     </findStrings>
+    <replaceStrings>
+      <replace>$1</replace>
+      <replace>print(vname)</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/gr_70" />
+        <option value="$PROJECT_DIR$/gr_100" />
+        <option value="$PROJECT_DIR$/inputs/gr_100v" />
         <option value="$PROJECT_DIR$/lab01.cpp" />
       </list>
     </option>
@@ -201,9 +240,10 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="1920" />
     <option name="y" value="17" />
-    <option name="width" value="960" />
+    <option name="width" value="1920" />
     <option name="height" value="1063" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -215,6 +255,11 @@
             <path>
               <item name="LAB01" type="b2602c69:ProjectViewProjectNode" />
               <item name="LAB01" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LAB01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LAB01" type="462c0819:PsiDirectoryNode" />
+              <item name="inputs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -231,6 +276,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/inputs" />
       <recent name="$PROJECT_DIR$/lab01" />
     </key>
   </component>
@@ -311,38 +357,59 @@
       <workItem from="1537838369912" duration="4195000" />
       <workItem from="1537875144869" duration="383000" />
       <workItem from="1537875559776" duration="4688000" />
-      <workItem from="1537918518832" duration="31864000" />
+      <workItem from="1537918518832" duration="46201000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41130000" />
+    <option name="totallyTimeSpent" value="55467000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="17" width="1920" height="1063" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14140876" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.14140876" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31756046" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32947367" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3168421" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.3280757" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32912722" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32947367" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="CMake" order="12" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.32947367" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.14140876" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32947367" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3168421" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.3280757" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32947367" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.32947367" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -403,13 +470,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mygraphlib.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-18417">
@@ -422,24 +482,66 @@
     <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret line="222" column="9" lean-forward="true" selection-start-line="222" selection-start-column="9" selection-end-line="222" selection-end-column="9" />
+          <caret line="222" column="9" selection-start-line="222" selection-start-column="9" selection-end-line="222" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/saida">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="420">
-          <caret line="58" selection-start-line="58" selection-end-line="58" selection-end-column="36" />
+    <entry file="file://$PROJECT_DIR$/inputs/gr_7v">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inputs/gr_20v">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gr_70">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gr_100">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inputs/gr_100v">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lab01.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="382" column="32" lean-forward="true" selection-start-line="382" selection-start-column="32" selection-end-line="382" selection-end-column="32" />
+        <state relative-caret-position="15">
+          <caret line="463" column="89" selection-start-line="463" selection-start-column="89" selection-end-line="463" selection-end-column="89" />
           <folding>
-            <element signature="e#1469#1518#0" expanded="true" />
+            <element signature="e#6286#6335#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/saida">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="-1796">
+          <caret line="24962" column="26" lean-forward="true" selection-start-line="24962" selection-start-column="26" selection-end-line="24962" selection-end-column="26" />
         </state>
       </provider>
     </entry>
