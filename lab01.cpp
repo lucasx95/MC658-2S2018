@@ -42,7 +42,11 @@ public:
             return;
         }
         ListNode *current = head;
-        while (current != nullptr && current->valuePerWeight > node->valuePerWeight) {
+        while (current != nullptr &&
+               (current->valuePerWeight > node->valuePerWeight ||
+                (current->valuePerWeight == node->valuePerWeight && current->weight < node->weight) ||
+                (current->valuePerWeight == node->valuePerWeight && current->weight == node->weight &&
+                 lemon::ListGraph::id(current->data) < lemon::ListGraph::id(node->data)))) {
             current = current->next;
         }
 
@@ -162,13 +166,13 @@ public:
         ListNode *current = head;
         while (remaining_weight > 0 && current != nullptr) {
             // if the item does not fit completely estimate it partially
-//            if (current->weight > remaining_weight) {
-//                float partial_value = (float) remaining_weight / (float) current->weight;
-//                estimative += (int) ceil((float) current->value * partial_value);
-//                remaining_weight = 0;
-//                current = current->next;
-//                continue;
-//            }
+            if (current->weight > remaining_weight) {
+                float partial_value = (float) remaining_weight / (float) current->weight;
+                estimative += (int) ceil((float) current->value * partial_value);
+                remaining_weight = 0;
+                current = current->next;
+                continue;
+            }
             estimative += current->value;
             remaining_weight -= current->weight;
             current = current->next;
@@ -213,15 +217,6 @@ public:
         ListNode *current = head;
         while (current != nullptr) {
             cout << lemon::ListGraph::id(current->data) << "  ";
-            current = current->next;
-        }
-        cout << endl;
-    }
-
-    void print(NodeStringMap &vname) {
-        ListNode *current = head;
-        while (current != nullptr) {
-            cout << vname[current->data] << "  ";
             current = current->next;
         }
         cout << endl;
@@ -315,7 +310,7 @@ bool ReadListGraph3(string filename,
 }
 
 set<Node>
-max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &value, int Capacity, NodeStringMap &vname);
+max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &value, int Capacity);
 
 
 bool isSetIndependent(ListGraph &g, const set<Node> &indSet) {
@@ -386,9 +381,7 @@ int main(int argc, char *argv[]) {
 
     cout << "Graph file: " << filename << "\n\n";
 
-    clock_t start = clock();
-    auto independentSet = max_ind_set(g, weight, value, C, vname);
-    cout << "time: " << (clock() - start) / (double) CLOCKS_PER_SEC << '\n';
+    auto independentSet = max_ind_set(g, weight, value, C);
 
     cout << "Independent set has vertices:" << endl;
     for (auto v: independentSet)
@@ -425,7 +418,7 @@ int main(int argc, char *argv[]) {
 // Modificar essa subrotina que retorna o conjunto independente de valor máximo
 // O código a seguir é apenas um exemplo de uma solução trivial
 set<Node>
-max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &value, int Capacity, NodeStringMap &vname) {
+max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &value, int Capacity) {
     int max_solution = 0, remaining_weight = Capacity, current_solution = 0;
     OrderedLinkedNodeList available, solution, used;
     set<Node> independentSet;
@@ -446,22 +439,13 @@ max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &valu
     for (EdgeIt e(g); e != INVALID; ++e) {
         Node v = g.v(e);
         Node u = g.u(e);
-        edges[g.id(v)][g.id(u)] = 1;
-        edges[g.id(u)][g.id(v)] = 1;
+        edges[lemon::ListGraph::id(v)][lemon::ListGraph::id(u)] = 1;
+        edges[lemon::ListGraph::id(u)][lemon::ListGraph::id(v)] = 1;
     }
 
     ListNode *clean_backtrack = nullptr;
     while (!available.empty()) {
         ListNode *candidate = available.peak();
-        cout << endl << "PRE ITERECTION" << endl;
-        cout << "AVAILABLE: ";
-        available.print(vname);
-        cout << "USED: ";
-        used.print(vname);
-        cout << "SOLUTION: ";
-        solution.print(vname);
-        cout << "CLEAN BACK: ";
-        cout << (clean_backtrack == nullptr ? "-1" : vname[clean_backtrack->data])<< endl;
 
 
         while (candidate != nullptr &&
@@ -475,25 +459,12 @@ max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &valu
             candidate = next;
         }
 
-        cout << "POST ITERECTION" << endl;
-        cout << "AVAILABLE: ";
-        available.print(vname);
-        cout << "USED: ";
-        used.print(vname);
-        cout << "SOLUTION: ";
-        solution.print(vname);
-        cout << "CLEAN BACK: ";
-        cout << (clean_backtrack == nullptr ? "-1" : vname[clean_backtrack->data]) << endl;
-
-
         if (current_solution >= max_solution) {
             max_solution = current_solution;
             independentSet = solution.toSet();
-            cout << "NEW BEST SOLUTION: ";
-            solution.print(vname);
-            cout << "VALUE: " << current_solution << endl;
         }
 
+        bool backtrack_cleared = false;
         if (clean_backtrack == solution.peakBottom()) {
             if (solution.empty()) {
                 return independentSet;
@@ -507,6 +478,7 @@ max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &valu
             }
             available.copy(used);
             used.clear();
+            backtrack_cleared = true;
         }
 
         ListNode *backtracked = solution.bottom();
@@ -517,6 +489,14 @@ max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &valu
                 clean_backtrack = solution.peakBottom();
             }
             used.insertOrdered(backtracked);
+            if (!backtrack_cleared) {
+                ListNode *restore = backtracked->next, *nextRestore = nullptr;
+                while (restore != nullptr) {
+                    nextRestore = restore->next;
+                    available.insertOrdered(used.remove(restore));
+                    restore = nextRestore;
+                }
+            }
         }
     }
 
