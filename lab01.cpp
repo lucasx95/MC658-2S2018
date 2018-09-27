@@ -11,10 +11,14 @@
 #include <lemon/gomory_hu.h>
 #include "mygraphlib.h"
 
+/**
+ * A List Node with denormalized data for easy access
+ */
 struct ListNode {
     Node data;
     int value = 0;
     int weight = 0;
+    // Value/weight ratio
     float valuePerWeight = 0.0;
     ListNode *next = nullptr;
     ListNode *previous = nullptr;
@@ -22,7 +26,7 @@ struct ListNode {
 };
 
 /*
- * Simple Linked List with insertOrdered option
+ * Ordered Linked List with helper methods for IndependentSet.
  */
 class OrderedLinkedNodeList {
 private:
@@ -33,9 +37,10 @@ private:
 public:
     OrderedLinkedNodeList() {};
 
+    // Insert a node ordered by valuePerWeight.
     void insertOrdered(ListNode *node) {
         size++;
-        // if the list is empty initialize it with both head and tail pointing to node
+        // If the list is empty initialize it with both head and tail pointing to node.
         if (head == nullptr) {
             head = node;
             tail = node;
@@ -50,7 +55,7 @@ public:
             current = current->next;
         }
 
-        // if its inserting in the start update head
+        // If its inserting in the start update head.
         if (current == head) {
             node->next = head;
             head->previous = node;
@@ -58,7 +63,7 @@ public:
             return;
         }
 
-        // if its inserting in the end update tail
+        // If its inserting in the end update tail.
         if (current == nullptr) {
             tail->next = node;
             node->previous = tail;
@@ -66,14 +71,13 @@ public:
             return;
         }
 
-
         node->next = current;
         node->previous = current->previous;
         current->previous->next = node;
         current->previous = node;
     }
 
-    // Inserts at the end. Only used when it is sure 'node' is the lowest valuable per weight
+    // Inserts at the end. Only used when it is sure 'node' has the lowest valuePerWeight.
     void insert(ListNode *node) {
         size++;
         if (head == nullptr) {
@@ -86,14 +90,17 @@ public:
         tail = node;
     }
 
+    // Get head without removing.
     ListNode *peak() {
         return head;
     }
 
+    // Get tail without removing.
     ListNode *peakBottom() {
         return tail;
     }
 
+    // Get head and remove.
     ListNode *top() {
         // if the list was empty return nullptr
         if (empty()) {
@@ -114,6 +121,7 @@ public:
         return fetch_node;
     }
 
+    // Get tail and remove.
     ListNode *bottom() {
         // if the list was empty return nullptr
         if (empty()) {
@@ -132,6 +140,7 @@ public:
         return fetch_node;
     }
 
+    // Verify if can insert the node in this Solution list. Checks if it will continue independent and with weight below capacity.
     bool canInsertInSolution(ListNode *node, const ListGraph &graph, const vector<vector<int>> &edges,
                              int remaining_weight) {
         if (remaining_weight < node->weight) {
@@ -147,14 +156,17 @@ public:
         return true;
     }
 
+    // List length.
     int length() {
         return size;
     }
 
+    // REturn true if list is empty.
     bool empty() {
         return size == 0;
     }
 
+    // Clear list.
     void clear() {
         head = tail = nullptr;
         size = 0;
@@ -180,6 +192,7 @@ public:
         return estimative;
     }
 
+    // Convert this list to set<Node>
     set<Node> toSet() {
         set<Node> independentSet;
         ListNode *current = head;
@@ -190,6 +203,7 @@ public:
         return independentSet;
     }
 
+    // Remove node from this list.
     ListNode *remove(ListNode *node) {
         size--;
         if (node == head) {
@@ -207,12 +221,14 @@ public:
         return node;
     }
 
+    // Soft copy of this list.
     void copy(OrderedLinkedNodeList list) {
         head = list.head;
         tail = list.tail;
         size = list.size;
     }
 
+    // Print the current nodes in this list.
     void print() {
         ListNode *current = head;
         while (current != nullptr) {
@@ -419,21 +435,28 @@ int main(int argc, char *argv[]) {
 // O código a seguir é apenas um exemplo de uma solução trivial
 set<Node>
 max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &value, int Capacity) {
+    // Initialize variable in empty solution state.
     int max_solution = 0, remaining_weight = Capacity, current_solution = 0;
     OrderedLinkedNodeList available, solution, used;
     set<Node> independentSet;
 
     int numberOfNodes = 0;
+    int min_weigth = INT32_MAX;
+    // Add all nodes to the availability list that is ordered by valuePerWeight.
     for (NodeIt v(g); v != INVALID; ++v) {
         ListNode *listNode = new ListNode;
         listNode->data = v;
         listNode->weight = weight[v];
         listNode->value = value[v];
         listNode->valuePerWeight = (float) listNode->value / (float) listNode->weight;
+        if (listNode->weight < min_weigth) {
+            min_weigth = listNode->weight;
+        }
         available.insertOrdered(listNode);
         numberOfNodes++;
     }
 
+    // Add all edges to a matrix to easy quick access.
     vector<vector<int>> edges(static_cast<unsigned long>(numberOfNodes), vector<int>(
             static_cast<unsigned long>(numberOfNodes)));
     for (EdgeIt e(g); e != INVALID; ++e) {
@@ -443,13 +466,21 @@ max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &valu
         edges[lemon::ListGraph::id(u)][lemon::ListGraph::id(v)] = 1;
     }
 
+    // Initialize the backtrack.
+
+    // clean_backtrack stores the 'primary' node in the solution, the one that was the last in the solution when
+    // the used list was cleared the last time, once the solution bottom is the same as clean_backtrack once again,
+    // all the possibilities with this partial solution including this node has been fulfilled and the 'used' list
+    // is restored as available.
     ListNode *clean_backtrack = nullptr;
+    // Continue in the loop while there's available nodes to be inserted in the solution.
     while (!available.empty()) {
+        // Get a candidate for inserting. And iterates to the next ones until the end or it is discarted in the
+        // estimative or the remaining_weigth available is smaller the the ligther node.
         ListNode *candidate = available.peak();
-
-
         while (candidate != nullptr &&
-               current_solution + available.estimate(remaining_weight) > max_solution) {
+               current_solution + available.estimate(remaining_weight) > max_solution &&
+               remaining_weight >= min_weigth) {
             ListNode *next = candidate->next;
             if (solution.canInsertInSolution(candidate, g, edges, remaining_weight)) {
                 solution.insert(available.remove(candidate));
@@ -459,21 +490,22 @@ max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &valu
             candidate = next;
         }
 
+        // If the solution found is better then the best known update the best known.
         if (current_solution >= max_solution) {
             max_solution = current_solution;
             independentSet = solution.toSet();
         }
 
+        // If matches the condition described above backtracks restoring available list from used.
         bool backtrack_cleared = false;
         if (clean_backtrack == solution.peakBottom()) {
+            // If at this time the solution is empty there's no other viable solution candidate so it returns.
             if (solution.empty()) {
                 return independentSet;
             }
+            // Restore the clean_backtrack to the empty state and merge used and available list as available.
             clean_backtrack = nullptr;
             while (!available.empty()) {
-                if (used.empty()) {
-                    clean_backtrack = solution.peakBottom();
-                }
                 used.insertOrdered(available.top());
             }
             available.copy(used);
@@ -485,10 +517,12 @@ max_ind_set(const ListGraph &g, const NodeIntMap &weight, const NodeIntMap &valu
         current_solution -= backtracked->value;
         remaining_weight += backtracked->weight;
         if (!solution.empty()) {
+            // If used was empty set clean_backtrack.
             if (used.empty()) {
                 clean_backtrack = solution.peakBottom();
             }
             used.insertOrdered(backtracked);
+            // If it was not a complete backtrack, restore the nodes that were added after (valuePerWeight >) to the available list.
             if (!backtrack_cleared) {
                 ListNode *restore = backtracked->next, *nextRestore = nullptr;
                 while (restore != nullptr) {
